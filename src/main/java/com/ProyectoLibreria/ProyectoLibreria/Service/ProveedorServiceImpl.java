@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ProyectoLibreria.ProyectoLibreria.Model.Libro;
 import com.ProyectoLibreria.ProyectoLibreria.Model.Proveedor;
 import com.ProyectoLibreria.ProyectoLibreria.Repository.ProveedorRepository;
 
@@ -18,13 +17,11 @@ public class ProveedorServiceImpl implements ProveedorService {
 	
 	@Override
 	public List<Proveedor> listarproveedores() {
-		// TODO Auto-generated method stub
 		return repoProv.findAll();
 	}
 
 	@Override
 	public Proveedor registroProv(Proveedor nuevoP) {
-		// TODO Auto-generated method stub
 		return repoProv.save(nuevoP);
 	}
 
@@ -36,7 +33,6 @@ public class ProveedorServiceImpl implements ProveedorService {
 	@Override
 	public boolean eliminarPorCod(int codProv) {
 		Optional<Proveedor> optionalProveedor = repoProv.findById(codProv);
-		
 		if(optionalProveedor.isPresent()) {
 			repoProv.deleteById(codProv);
 			return true;
